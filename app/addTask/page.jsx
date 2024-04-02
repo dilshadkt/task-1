@@ -3,7 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "@/app/config/Axios";
 import { useRouter } from "next/navigation";
-const AddTask = () => {
+const AddTasks = () => {
   const { register, watch } = useForm();
   const navigator = useRouter();
   const CreateTask = (e) => {
@@ -43,4 +43,4 @@ const AddTask = () => {
   );
 };
 
-export default AddTask;
+export default AddTasks;
