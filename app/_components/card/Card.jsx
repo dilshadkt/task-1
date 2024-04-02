@@ -1,7 +1,13 @@
 import React from "react";
 import Button from "../button/Button";
-
+import axios from "@/app/config/Axios";
 const Card = ({ data }) => {
+  const delteTask = (id) => {
+    axios
+      .delete(`/home?id=${id}`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
   return (
     <div key={data._id} className="bg-base-200 text-black rounded-lg p-5">
       <div className="my-6">

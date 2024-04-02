@@ -10,6 +10,7 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-end h-[70px] bg-base-200 px-[5%]">
       <div
+        title="logout"
         onClick={() => logout()}
         className="w-10 h-10 rounded-full bg-black"
       ></div>
