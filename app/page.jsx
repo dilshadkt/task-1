@@ -42,7 +42,7 @@ export default function Home() {
           <div className="rounded-lg shadow-md min-h-[70vh] border p-5">
             <div className="grid grid-cols-3  gap-4 ">
               {task?.map((item) => (
-                <Card data={item} setTask={setTask} />
+                <Card key={item._id} data={item} setTask={setTask} />
               ))}
             </div>
           </div>
