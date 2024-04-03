@@ -31,7 +31,7 @@ export default function Home() {
     <main className="bg-white flex flex-col h-screen">
       <Navbar />
       <div className="h-full flex ">
-        <div className="flex-initial w-[20%] bg-white shadow-2xl flex items-end p-5">
+        <div className="flex-initial w-[20%] bg-gray-200 border shadow-2xl flex items-end p-5">
           <Link href={"/addTask"} className="w-full">
             <div className="w-full rounded-lg flex items-center justify-center bg-blue-500 text-white py-3">
               Add Task

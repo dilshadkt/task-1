@@ -8,7 +8,7 @@ const Navbar = () => {
     navigate.replace("/auth/login");
   };
   return (
-    <div className="flex items-center justify-end h-[70px] bg-base-200 px-[5%]">
+    <div className="flex items-center justify-end h-[70px] bg-gray-500 px-[5%]">
       <button
         title="logout"
         onClick={() => logout()}
