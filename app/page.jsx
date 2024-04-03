@@ -4,6 +4,7 @@ import Navbar from "./_components/Navbar";
 import Link from "next/link";
 import axios from "@/app/config/Axios";
 import Card from "./_components/card/Card";
+import Modal from "./_components/modal/Modal";
 export default function Home() {
   const [task, setTask] = useState([]);
 
@@ -38,8 +39,8 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex-1 p-5 ">
-          <div className="rounded-lg border p-5">
-            <div className="grid grid-cols-3 gap-4">
+          <div className="rounded-lg shadow-md min-h-[70vh] border p-5">
+            <div className="grid grid-cols-3  gap-4 ">
               {task?.map((item) => (
                 <Card data={item} setTask={setTask} />
               ))}
