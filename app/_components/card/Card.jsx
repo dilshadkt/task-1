@@ -29,7 +29,7 @@ const Card = ({ data, setTask }) => {
           </div>
         </div>
       </div>
-      <Modal currentData={data} />
+      <Modal currentData={data} setTask={setTask} />
     </>
   );
 };

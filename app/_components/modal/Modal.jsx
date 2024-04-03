@@ -2,15 +2,18 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "@/app/config/Axios";
 import { useRouter } from "next/navigation";
-const Modal = ({ currentData }) => {
+const Modal = ({ currentData, setTask }) => {
   const navigator = useRouter();
-  const { register } = useForm();
+  const { register, watch } = useForm();
   const EditTask = (e) => {
     e.preventDefault();
     axios
-      .patch("/home/edit", watch())
+      .patch(`/home/edit?taskId=${currentData._id}`, watch())
       .then((res) => {
         navigator.replace("/");
+        document.getElementById("my_modal_2").close();
+        setTask(res.data.CurrentUser.task);
+        console.log(res.data.CurrentUser.task);
       })
       .catch((err) => console.log(err));
   };
