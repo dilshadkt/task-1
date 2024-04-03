@@ -1,10 +1,10 @@
 import React from "react";
 import { useRouter } from "next/navigation";
-
+import Cookies from "js-cookie";
 const Navbar = () => {
   const navigate = useRouter();
   const logout = () => {
-    localStorage.clear();
+    Cookies.remove("token");
     navigate.replace("/auth/login");
   };
   return (

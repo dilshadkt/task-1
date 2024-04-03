@@ -1,11 +1,13 @@
 import React from "react";
 import Button from "../button/Button";
 import axios from "@/app/config/Axios";
-const Card = ({ data }) => {
+const Card = ({ data, setTask }) => {
   const delteTask = (id) => {
     axios
       .delete(`/home?id=${id}`)
-      .then((res) => console.log(res))
+      .then((res) => {
+        setTask(res.data.updatedTask);
+      })
       .catch((err) => console.log(err));
   };
   return (

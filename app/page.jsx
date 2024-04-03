@@ -12,6 +12,7 @@ export default function Home() {
       .get(`/home`)
       .then((res) => {
         setTask(res.data.CurrentUser.task);
+        console.log(res.data.CurrentUser.task);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -40,7 +41,7 @@ export default function Home() {
           <div className="rounded-lg border p-5">
             <div className="grid grid-cols-3 gap-4">
               {task?.map((item) => (
-                <Card data={item} />
+                <Card data={item} setTask={setTask} />
               ))}
             </div>
           </div>
