@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "@/app/config/Axios";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import Cookies from "js-cookie";
 import Link from "next/link";
 const AuthForm = () => {
   const { register, watch } = useForm();
@@ -20,13 +21,13 @@ const AuthForm = () => {
       .then((res) => {
         if (params === "login") {
           router.replace("/");
-          localStorage.setItem("token", res.data.token);
+          Cookies.set("token", res.data.token);
         } else {
           router.push("/auth/login");
         }
       })
       .catch((err) => {
-        console.log(err);
+        setError(err.response.data);
       });
   };
 

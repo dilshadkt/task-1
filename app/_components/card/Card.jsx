@@ -15,7 +15,9 @@ const Card = ({ data }) => {
         <p className="text-gray-500 text-sm">{data.description}</p>
       </div>
       <div className="flex items-center justify-between">
-        <Button value={"Delete"} />
+        <div onClick={() => delteTask(data._id)}>
+          <Button value={"Delete"} />
+        </div>
         <Button value={"Edit"} />
       </div>
     </div>

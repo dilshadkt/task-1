@@ -11,7 +11,6 @@ export default function Home() {
     axios
       .get(`/home`)
       .then((res) => {
-        console.log(res.data.CurrentUser);
         setTask(res.data.CurrentUser.task);
       })
       .catch((err) => console.log(err));
@@ -41,7 +40,7 @@ export default function Home() {
           <div className="rounded-lg border p-5">
             <div className="grid grid-cols-3 gap-4">
               {task?.map((item) => (
-                <Card key={item._id} data={item} />
+                <Card data={item} />
               ))}
             </div>
           </div>
